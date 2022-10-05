@@ -1,0 +1,51 @@
+1. catalog app
+Data Access Layer
+Business Logic Layer
+Presentation Layer
+
+Mongodb
+
+docker ps
+docker images
+docker pull mongo
+docker run -d -p 27017:27017 --name shopping-mongo mongo
+docker logs -f shopping-mongo
+docker exec -it shopping-mongo /bin/bash
+docker start containername
+
+-> mongosh
+-> show dbs
+-> use CatalogDb
+-> db.createCollection('Products')
+-> db.Products.insertMany()
+-> db.Products.find({}).pretty()
+-> db.Products.remove({})
+-> show databases
+-> show collections
+-> to delete db
+-> use ProductDB
+-> db.dropDatabase()
+
+** Important Topics: Docker, Docker-Compose
+
+1. dockerfile -> part of it builds the application and part of it publishes the application
+2. docker-compose.yaml -> defines all the services to be deployed in a docker environment
+3. docker-compose.overrride.yml -> configure image properties.
+4. volumes: store data in local file system.	 
+
+-- Run the application in docker environment
+docker stop mongocontainername
+docker rm mongocontainername
+docker rmi mongocontainername
+
+docker compose commands:
+docker-compose -f docker-compose.yml -f docker-compose.override.yml up -d
+
+stop all containers:
+docker-compose -f docker-compose.yml -f docker-compose.override.yml down
+
+docker ps -aq
+docker stop $(docker ps -aq)
+docker rm $(docker ps -aq)
+docker rmi $(docker images -q)
+docker system prune
