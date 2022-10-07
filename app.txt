@@ -64,3 +64,7 @@ docker exec -it aspnetrun-redis /bin/bash
 -> get key
 -> set name name
 -> get name
+
+** Setting up portainer
+admin
+admin1234
