@@ -49,3 +49,18 @@ docker stop $(docker ps -aq)
 docker rm $(docker ps -aq)
 docker rmi $(docker images -q)
 docker system prune
+
+2. Basket app
+redis
+
+docker pull redis
+docker run -d -p 6379:6379 --name aspnetrun-redis redis
+docker ps -a
+docker logs -f aspnetrun-redis
+docker exec -it aspnetrun-redis /bin/bash
+-> redis-cli
+-> ping
+-> set key value 
+-> get key
+-> set name name
+-> get name
